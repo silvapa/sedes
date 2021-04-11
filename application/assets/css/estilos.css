@@ -1,0 +1,167 @@
+/* set a max-width for horizontal fluid layout and make it centered */
+/*
+
+.container_grande {
+  max-width: 950px; 
+}
+
+.round {border-radius: 15px;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+}
+
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+
+*/
+.body {
+  text-align: center;
+  background-color:  #ccc;
+}
+.navbar-brand { 
+    overflow: visible;
+    padding-top: 0;
+    padding-bottom: 0; 
+    max-height: 30px;
+}
+.ftitle { 
+  background-color: #d9176b ! important; 
+}
+.centrado {
+text-align:center
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  /*background-color: #393939;*/
+  background-color: #000000;  
+  padding: 20px;
+  color: #3EBFB9;
+}
+.container_chico {
+  max-width: 350px; 
+/*background-color: #000000;  */
+background-color: #393939;
+}
+.label_a_derecha {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}​
+.round {border-radius: 15px;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+}
+/*--Header-top-Starts--*/
+.logo {
+    display:block;
+    margin:auto;
+
+ /*  float: left;*/
+/*    width: 290px;
+    height: 72px;*/
+/*    style="float:left width:264px;height:73px;"*/
+}
+/*.head-main {
+    float: left;
+    width: 25%;
+    color: #A94442;
+    font-weight: bold;
+ }
+.head-main img {
+    display:block;
+    margin:auto;
+} 
+*/
+/* ayuda memoria: padding top, right, bottom, left
+fin mariana */
+
+.dropdown-menu{
+  background-color: #333333 ! important; 
+}
+
+.divider {
+  height: 2px;
+  width:100%;
+  display:block; /* for use on default inline elements like span */
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #3EBFB9 ! important; 
+}
+
+.header-top{
+  padding:0em 0px;
+  font-family: 'Lato';
+  font-size: 16px;
+  background-color : #000000; 
+}
+/*--Header-top-end--*/
+/*--Header-Starts--*/
+
+/*@media(max-width: 767px) {
+  .navbar.navbar-default {
+     position:fixed; top:0; right:0;
+   }
+}*/
+.dataTablesContainer {
+    background-color: #d9176b ! important; 
+   /* font-family: 'Lato';*/
+}
+.form-title {
+    background-color: #d9176b ! important; 
+   /* font-family: 'Lato';*/
+}
+.body {
+    background-color: #393939 ! important; 
+    font-family: 'Lato';
+}
+
+.navigation {
+    float: left;
+    margin: 0.6em 0 0;
+}
+.navbar {
+    border-radius: 0px ! important;
+    background-color: #393939; 
+    font-family: 'Lato';
+
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: none ! important;
+}
+
+.navbar-collapse {
+    padding-right: 0px;
+/*    padding-left: 0px;*/
+}
+.header-right {
+  float: right;
+}
+
+.header {
+  padding: 0em 0px;
+    box-shadow: 0px 1px 9px 1px rgba(0, 0, 0, 0.11);
+}
+
+.navbar ul li a {
+    border-left-color: #000000;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #3EBFB9;
+
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #fafafa;
+}
+
+*--Header-Ends--*/

@@ -1,0 +1,154 @@
+                                <div class="form-group row mb-0">
+                                    <label for="fechaInicio" class="col-md-3 mr-2">Fecha Inicio</label>
+                                    <label for="fechaFin" class="col-md-3 mr-2">Fecha Fin</label>
+                                </div>
+                                <div class="form-group row">
+                                    <input class="form-control col-md-3 mr-2" id="fechaInicio" placeholder="Fecha Desde" maxlength="10" autocomplete="off" name="fechaInicio" type="text">
+                                    <input class="form-control col-md-3 mr-2" id="fechaFin" placeholder="Fecha Hasta" maxlength="10" autocomplete="off" name="fechaFin" type="text">
+
+                                    <div class="btn-group">
+                                        <button id="dropdown-report" type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown">
+                                        <span class="caret">Descargar Reporte Sistema <i class="fas fa-file-download"></i></span>
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#" onClick="getReporteMovimientos('exportar/descargarReporteAltasXLS');">Reporte Movimientos Altas Excel</a>
+                                            <a class="dropdown-item" href="#" onClick="getReporteMovimientos('exportar/descargarReporteCambioCarreraXLS');">Reporte Movimientos Cambio Carrera Excel</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+
+
+                                <script>
+                                    $(document).ready(function() {
+                                        $("#fechaInicio").inputmask("99/99/9999",{
+                                            "placeholder": "dd/mm/yyyy" ,
+                                            "clearIncomplete": true
+                                        });
+                            
+                                        $("#fechaFin").inputmask("99/99/9999",{
+                                            "placeholder": "dd/mm/yyyy",
+                                            "clearIncomplete": true
+                                         });
+                            
+                                         $( "#fechaInicio" ).datepicker({
+                                            changeMonth: true,
+                                            changeYear: true,
+                                            maxDate: "+0d"
+                                        });
+                                         $( "#fechaFin" ).datepicker({
+                                            changeMonth: true,
+                                            changeYear: true,
+                                            maxDate: "+0d"
+                                        });
+                                    });
+                            
+                                    function getReporteMovimientos(url) {
+                                        var errores = "";
+                                        $('.is-invalid').removeClass('is-invalid');
+                            
+                                        var fechaInicio = $.trim($("#fechaInicio").val());
+                                        if(!fechaInicio){
+                                            errores += "Debe ingresar una Fecha de Inicio. ";
+                                            $('#fechaInicio').addClass('is-invalid');
+                                        }
+                            
+                                        var fechaFin = $.trim($("#fechaFin").val());
+                                        if(!fechaFin){
+                                            errores += "Debe ingresar una Fecha de Fin. ";
+                                            $('#fechaFin').addClass('is-invalid');
+                                        }
+                            
+                                        if(getTime(fechaInicio) > getTime(fechaFin)){
+                                        errores += "Debe ingresar una Fecha de Inicio menor o igual a la de Fin. ";
+                                        $('#fechaInicio').addClass('is-invalid');
+                                        $('#fechaFin').addClass('is-invalid');
+                                        }
+                            
+                                        if(errores == "") {
+                                            enviar(url, true);
+                                        } else {
+                                            swal({
+                                                title: "Campos incompletos",
+                                                type: "error",
+                                                text: errores,
+                                                showConfirmButton: true,
+                                                html: true
+                                            });
+                                        }
+                                    };
+                            
+                                    function getTime(d) {
+                                        return new Date(d.split("/").reverse().join("-")).getTime()
+                                    }
+                            
+                                    function desactivarVelo() {
+                                        document.getElementById('page_loader').style.display='none';
+                                        $("#dropdown-report").removeAttr("disabled");
+                                    }
+                            
+                                    function enviar(url, requiereFechas=false) {
+                                        $("#dropdown-report").attr('disabled','disabled');
+                                        document.getElementById('page_loader').style.display='block';
+                                        var xhr = new XMLHttpRequest();
+                                        xhr.open("POST", url, true);
+                                        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+                                        xhr.setRequestHeader('X-CSRF-TOKEN', $('meta[name="csrf-token"]').attr('content'));
+                                        xhr.responseType = 'blob';
+                            
+                                        xhr.onload = function(e) {
+                                            if (this.status === 200) {
+                                                var blob = this.response;
+                                                var header = xhr.getResponseHeader('Content-Disposition');
+                                                var startIndex = header.indexOf("filename=") + 9;
+                                                var endIndex = (header.length);
+                                                var filename = header.substring(startIndex, endIndex);
+                                                if(window.navigator.msSaveOrOpenBlob) {
+                                                    window.navigator.msSaveBlob(blob, filename);
+                                                } else {
+                                                    var downloadLink = window.document.createElement('a');
+                                                    var contentTypeHeader = xhr.getResponseHeader("Content-Type");
+                                                    downloadLink.href = window.URL.createObjectURL(new Blob([blob], { type: contentTypeHeader }));
+                                                    downloadLink.download = filename;
+                                                    document.body.appendChild(downloadLink);
+                                                    downloadLink.click();
+                                                    document.body.removeChild(downloadLink);
+                                                }
+                                            } else {
+                                                swal({
+                                                    title: "Hubo un error al intentar descargar",
+                                                    type: "error",
+                                                    text: this.status + " - " + this.statusText,
+                                                    showConfirmButton: true,
+                                                    html: true
+                                                },
+                                                function () {
+                                                    location.reload();
+                                                });
+                                            }
+                                            desactivarVelo();
+                                            };
+                            
+                                        xhr.onerror = function(){
+                                            desactivarVelo();
+                                            swal({
+                                                title: "Hubo un error no esperado al intentar descargar",
+                                                type: "error",
+                                                text: 'Por favor vuelva a intentar.',
+                                                showConfirmButton: true,
+                                                html: true
+                                            },
+                                            function () {
+                                                location.reload();
+                                            });
+                                        };
+                            
+                                        if (requiereFechas) {
+                                            var fechaInicio = $.trim($("#fechaInicio").val());
+                                            var fechaFin = $.trim($("#fechaFin").val());
+                                            xhr.send('fechaInicio='+fechaInicio+'&fechaFin='+fechaFin);
+                                        } else {
+                                            xhr.send();
+                                        }
+                                    }
+                                </script>                                

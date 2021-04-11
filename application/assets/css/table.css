@@ -1,0 +1,99 @@
+/*.bar rect {
+  fill: steelblue;
+}
+
+.bar text {
+  fill: #fff;
+  font: 10px;
+}*/
+#tabla_individual{
+  margin-top: 30px !important;
+}
+#tabla_compara{
+  margin-top: 0px !important;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+  background-color: #e5f6f9 !important;
+} 
+#div_scroll{
+  display: inline-block;
+  height: 80vh;
+  overflow-y: auto;
+  width: 100%;
+  background-color: white;
+  }  
+
+/*#tabla_matriz { margin-top: 20px; height: 200px; overflow: auto;  max-height: 480px;}
+#tabla_matriz table { border-collapse: collapse; }
+#tabla_matriz tr:nth-child(even) { background: #EEE; }
+#tabla_matriz th div { position: absolute; margin-top: -20px; }*/
+/*.table {
+  font-size: 12px;
+  font-family: Calibri, Arial, Helvetica, Verdana;
+  table-layout:fixed;
+  width:100%;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+  overflow-x: visible;
+  text-overflow: none;
+}*/
+.titulo_form_tabla {
+  font-family: Calibri, Arial, Helvetica, Verdana;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.table-xtra-condensed > thead > tr > th,
+.table-xtra-condensed > tbody > tr > th,
+.table-xtra-condensed > tfoot > tr > th,
+.table-xtra-condensed > thead > tr > td,
+.table-xtra-condensed > tbody > tr > td,
+.table-xtra-condensed > tfoot > tr > td {
+  padding: 1.5px !important ;
+  text-align: center;
+  font-size: 12px;
+  font-family: Calibri, Arial, Helvetica, Verdana;
+  overflow-x: auto;
+}
+/*.table td.fit, 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+    padding-right: 10px;
+}*/
+
+thead {
+  position: sticky;
+  top: 1px;
+  z-index: 999;
+  color:whitesmoke;
+}
+tbody {
+  height: 80px;
+}
+
+.disable-selection {
+  -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer */
+-khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+-webkit-user-select: none; /* Chrome, Safari, and Opera */
+-webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+
+.table th {
+  background-color: #008193;
+}
+.table caption {
+  background-color: #008193;
+  font-size: 15px;
+}
+.table td {
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+  vertical-align: middle !important;
+}
+
+.table-hover > tbody > tr:hover {
+  font-weight:bold;
+}

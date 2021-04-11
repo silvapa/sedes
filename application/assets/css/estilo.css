@@ -1,0 +1,125 @@
+﻿
+/* =============================================================
+   GENERAL STYLES
+ ============================================================ */
+body {
+  /*font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;*/
+	font-family: Verdana, Geneva, sans-serif;    
+  /*font-family: Georgia, "Times New Roman", Times, serif;*/
+  color: #006B61;
+	background-color: #B5E8E3; /*#b3e6ff  #006B61;*/
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #B5E8E3 inset;
+}
+
+table {
+    border-collapse:separate;
+    border-radius:10px;
+    -moz-border-radius:6px;
+    font-size: 14px;
+}
+.panel_de_fondo {
+  max-width: 690px;
+}
+.centered-form{
+  margin-top: 60px;
+}
+.radio label{
+  display: table-caption;
+}
+.centered-form .panel{
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+
+.row
+{ display: table-row; border-style: solid; border-width: 2px; }
+
+.col
+{ display: table-cell; text-align: center; vertical-align: top; border-style: solid; border-width: 2px; }
+
+#page-wrap { width: 70%;
+        margin: 0 auto;
+}
+.Lines2 {
+  background-color: #ff6633;
+  height: 2px;
+  /*width: 728px;
+  position: relative;*/
+}
+.Lines1 {
+  background-color: #906;
+  height: 2px;
+  /*width: 728px;
+  position: relative;*/
+}
+.etiqueta {
+/*  color: #FFFFFF;
+  font-style: italic;*/
+  font-weight: bold;
+  text-align: right;
+  clear: both;
+  float:left;
+  margin-right:15px;  
+  display: inline;
+}
+
+.explicacion {
+/*  color: #FFFFFF;*/
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  text-align: justify;
+}
+.titulo {
+  color: #FFFFFF;
+  background-color: #2d2d2d; /*#03848A;*/
+  /*font-style: italic;*/
+  font-weight: bold;
+  font-family: "Myriad pro";    
+  font-size: medium;
+  /*text-shadow: 2px 2px #B5E8E3;*/
+}
+.piedepagina {
+/*  color: #FFFFFF;*/
+  background-color: #03848A;
+  font-style: italic;
+  /*font-size: small;*/
+  /*font-weight: bold;*/
+  vertical-align: middle;
+  text-align: center;  /*width="728" */
+  font-family: "Myriad pro";    
+  color: #FFF;
+  font-size: 18px;
+}
+.letras_peque {
+  font-size: 10px;
+  color: #006B61;
+  padding-bottom: 20px;
+}
+.celda_entrada {
+/*	vertical-align: text-bottom;*/
+  text-align: left;
+	background-color: #B5E8E3; /*#b3e6ff*/
+  text-transform: uppercase;
+  float:left;
+  display: inline;
+}	
+.fila_entrada {
+/*	vertical-align: text-top;
+	height: 27px;*/
+	padding-bottom: 1em;
+  display: block;
+}	
+.boton {
+    background-color: #006666; /*#20638d*/
+    display: inline-block;
+    border-radius: 4px;
+    padding: 7px;
+    font-weight: 600;
+    font-size: medium; /*1em;*/
+    color: #fff;
+    margin: 4px 0;
+	width: 40%;
+}

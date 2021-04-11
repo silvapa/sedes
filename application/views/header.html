@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="<?php echo base_url() ?>application/assets/vendor/jquery.mobile-1.2.0/jquery.mobile-1.2.0.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>application/assets/css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>application/assets/css/style.css"/>
+<!--<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>application/assets/css/flexslider.css" media="screen" />-->
+<!-- <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700|Six+Caps' rel='stylesheet' type='text/css' />-->
+<script src="<?php echo base_url(); ?>application/assets/js/jquery.min.js"></script>
+<!--        <script type="text/javascript" src="<?php echo base_url() ?>assets/grocery_crud/js/jquery-1.11.1.min.js"></script>    -->
+<script src="<?php echo base_url(); ?>application/assets/js/jquery.browser.js"></script>
+<!--<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>-->
+<script type="text/javascript" src="<?php echo base_url(); ?>application/assets/js/bootstrap.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script>
+$("document").ready(function(){
+$(".press").keypress(function(event){
+if(event.which == 13){
+cb = parseInt($(this).attr('tabindex'));
+if ( $(':input[tabindex=\'' + (cb + 1) + '\']') != null) {
+$(':input[tabindex=\'' + (cb + 1) + '\']').focus();
+$(':input[tabindex=\'' + (cb + 1) + '\']').select();
+return false;
+}
+}
+});
+});
+</script>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#"><img src="<?php echo base_url(); ?>application/assets/img/logo_completo.png" /></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="<?php echo base_url(); ?>Main/principal">Inicio</a></li>
+        <li><a href="<?php echo base_url(); ?>Main/abm_games">Juegos</a></li> 
+        <li><a href="<?php echo base_url(); ?>Genres/genres">Generos</a></li> 
+		<li><a href="<?php echo base_url(); ?>Platforms/platforms">Plataformas</a></li> 
+		<li><a href="<?php echo base_url(); ?>Telcos/telcos">Telcos</a></li> 
+		<li><a href="<?php echo base_url(); ?>Countries/countries">Paises</a></li> 
+		<li><a href="<?php echo base_url(); ?>Vendors/vendors">Vendors</a></li> 
+		<li><a href="<?php echo base_url(); ?>Developers/developers">Developers</a></li> 
+		<li><a href="<?php echo base_url(); ?>HClasses/hclasses">H.Classes</a></li> 
+		<li><a href="<?php echo base_url(); ?>Games_day/games_day/edit/1">Juego del Dia</a></li> 
+        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Genexies <b class="caret"></b></a>
+        <ul class="dropdown-menu nav navbar-nav">
+          	<li><a href="<?php echo base_url(); ?>Calificacion/calificacion">Calificaciones</a></li> 
+			<li><a href="<?php echo base_url(); ?>Pricecode/pricecode">Precios</a></li>  
+			<li><a href="<?php echo base_url(); ?>Genres_genexies/genres_genexies">Generos</a></li>                            
+          	<li class="divider" ></li>
+			<li><a href="<?php echo base_url(); ?>Genexies_cargas/genexies_cargas">Cargas</a></li>  
+        </ul></li>
+                      
+		<li><a href="<?php echo base_url(); ?>Main/salir">Salir</a></li> 
+      </ul>
+<!--       <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul> -->
+    </div>
+  </div>
+ </nav>
+	<!--header-top-starts-->
+<!-- 	<div class="header-top">
+		<div class="container">
+			<div class="head-main">
+				 <img class="logo" src="<?php echo base_url(); ?>application/assets/img/logo_completo.png"/> 
+			</div>
+			<div class="navigation">
+				 <nav class="navbar navbar-default" role="navigation">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href="./principal">Inicio</a></li>
+							<li><a href="./abm_games">Juegos</a></li>
+							<li><a href="./principal">Usuarios</a></li>
+							<li><a href="./principal">Generos</a></li>
+							<li><a href="./principal">Contacto</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div> -->

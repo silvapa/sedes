@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 if(strpos($_SERVER['SERVER_NAME'],"localhost") === FALSE){
-    $config['base_url'] = "http://157.92.72.30/sedes/";
+    $config['base_url'] = "http://158.69.11.229/sedes/";
   }else{
     $config['base_url'] = "http://localhost/sedes/";
   }

@@ -1,4 +1,4 @@
 <?php
-echo "PRUEBA DEL SERVICIO";
+echo "PRUEBA DE BRANCHES";
 phpinfo();
 ?>
